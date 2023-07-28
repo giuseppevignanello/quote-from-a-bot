@@ -1,4 +1,4 @@
-characters = [
+const characters = [
   {
     name: "Homer Simpson",
     image:
@@ -17,7 +17,7 @@ characters = [
   {
     name: "Goku",
     image:
-      "https://35milimetros.es/wp-content/uploads/2016/02/homer-simpson.jpg",
+      "https://dragonball.guru/wp-content/uploads/2021/01/goku-dragon-ball-guru.jpg",
   },
   {
     name: "Tyrion Lannister",
@@ -34,4 +34,52 @@ characters = [
     image:
       "https://7televalencia.com/wp-content/uploads/2019/04/lisasimpsonnok.jpg",
   },
+  {
+    name: "Batman",
+    image:
+      "https://estaticos-cdn.elperiodico.com/clip/bd2a087e-0076-4792-80e5-27e8d52955c1_alta-libre-aspect-ratio_default_0.png",
+  },
+  {
+    name: "Barbie",
+    image:
+      "https://media.npr.org/assets/img/2023/04/25/hjt05_c_23_46-98771c9fbce8ec65d11cf2df7a21f39d1a259b81.jpg",
+  },
 ];
+
+// end charactes list
+
+// take characters container from the dom
+
+const charactersContainer = document.getElementById("characters_container");
+
+//function to add character to the page
+function addCharactersToPage() {
+  characters.forEach((character) => {
+    const characterElement = document.createElement("div");
+    characterElement.classList.add("character");
+
+    //add data-character attribute
+    characterElement.setAttribute("data-character", character.name);
+
+    //add character image
+    const characterImage = document.createElement("img");
+    characterImage.src = character.image;
+    characterImage.alt = character.name;
+    characterImage.classList.add("rounded-circle");
+    characterElement.appendChild(characterImage);
+
+    //append element to container
+    charactersContainer.appendChild(characterElement);
+  });
+  // event listener on each character
+
+  const charactersList = document.querySelectorAll(".character");
+
+  charactersList.forEach((element) => {
+    element.addEventListener("click", function () {
+      console.log(element.dataset.character);
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", addCharactersToPage);
