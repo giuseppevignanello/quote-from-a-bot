@@ -48,6 +48,17 @@ const characters = [
 
 // end charactes list
 
+// functions
+
+function clickCharacter(nameCharacter) {
+  //show loader
+  const loader = document.getElementById("loader");
+  loader.classList.remove("d-none");
+  // end show loader
+}
+
+// end functions
+
 // take characters container from the dom
 
 const charactersContainer = document.getElementById("characters_container");
@@ -77,7 +88,7 @@ function addCharactersToPage() {
 
   charactersList.forEach((element) => {
     element.addEventListener("click", function () {
-      console.log(element.dataset.character);
+      clickCharacter(element.dataset.character);
     });
   });
 }
