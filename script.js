@@ -39,22 +39,50 @@ const characters = [
     image:
       "https://estaticos-cdn.elperiodico.com/clip/bd2a087e-0076-4792-80e5-27e8d52955c1_alta-libre-aspect-ratio_default_0.png",
   },
-  {
-    name: "Barbie",
-    image:
-      "https://media.npr.org/assets/img/2023/04/25/hjt05_c_23_46-98771c9fbce8ec65d11cf2df7a21f39d1a259b81.jpg",
-  },
 ];
 
 // end charactes list
 
-// functions
+//take input from user
+let promptInput = "";
+const takePromptBtn = document.getElementById("takePromptBtn");
+takePromptBtn.addEventListener("click", function () {
+  promptInput = document.getElementById("promptInput").value;
+});
 
-function clickCharacter(nameCharacter) {
+// functions
+async function clickCharacter(nameCharacter) {
   //show loader
   const loader = document.getElementById("loader");
   loader.classList.remove("d-none");
   // end show loader
+  //   call Open Ai API
+  const temperature = 0.7;
+
+  const API_URL = "https://api.openai.com/v1/chat/completions";
+  const MODEL = "gpt-3.5-turbo";
+  const API_KEY = "";
+
+  const response = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        {
+          role: "user",
+          content: `You are ${nameCharacter} and ${promptInput}. Don't break character!`,
+        },
+      ],
+      temperature: temperature,
+    }),
+  });
+
+  const data = await response.json();
+  console.log(data);
 }
 
 // end functions
@@ -82,13 +110,14 @@ function addCharactersToPage() {
     //append element to container
     charactersContainer.appendChild(characterElement);
   });
-  // event listener on each character
 
+  // event listener on each character
   const charactersList = document.querySelectorAll(".character");
 
   charactersList.forEach((element) => {
     element.addEventListener("click", function () {
       clickCharacter(element.dataset.character);
+      console.log(element.dataset.character);
     });
   });
 }
