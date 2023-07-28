@@ -1,0 +1,30 @@
+:root {
+    --main-color: #013BEB;
+    --light-color: white; 
+    --dark-color: black;
+    --secondary-color: #F26BAD;
+    --tertiary-color: #6BC0F2;
+}
+
+
+.bg_main {
+    background-color: var(--main-color);
+}
+
+.bg_secondary {
+    background-color: var(--secondary-color);
+}
+
+.bg_tertiary {
+    background-color: var(--tertiary-color);
+}
+
+.bg_light {
+    background-color: var(--light-color);
+}
+
+.bg_dark {
+    background-color: var(--dark-color);
+}
+
+
