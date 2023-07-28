@@ -14,9 +14,54 @@
 </head>
 
 <body>
-    <header>
+    <header class="app_header text-center py-3 bg_secondary text-white">
         <h1>Quote from a bot</h1>
+        <p>select a character and see what they have to say
+        </p>
     </header>
+    <main class="app_main bg_main">
+        <div class="d-flex justify-content-center gap-3 pt-3">
+            <!-- character -->
+            <div class="character ">
+                <img class="rounded-circle"
+                    src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/01/coche-homer-simpson_1.jpg?tf=3840x"
+                    alt="">
+
+
+            </div>
+            <div class="character">
+                <img class="rounded-circle"
+                    src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/01/coche-homer-simpson_1.jpg?tf=3840x"
+                    alt="">
+            </div>
+            <div class="character">
+                <img class="rounded-circle"
+                    src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/01/coche-homer-simpson_1.jpg?tf=3840x"
+                    alt="">
+            </div>
+            <!-- end character -->
+            <div class="myModalContainer loading d-none">
+                <div class="myModal">
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+    <footer class=" app_footer bg_secondary text-white text-center py-3">
+        Copyright &copy Giuseppe Vignanelo
+    </footer>
+
+    <!-- loading -->
+
+
+    <div class="loadingContainer d-none loading">
+        <div class=" d-flex justify-content-center align-items-center h-100">
+            <div class="spinner-border text-primary" role="status">
+            </div>
+        </div>
+    </div>
+    <!-- end loading -->
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

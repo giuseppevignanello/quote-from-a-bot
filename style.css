@@ -11,6 +11,16 @@ body {
     --tertiary-color: #6BC0F2;
 }
 
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(161, 210, 255, 0.8);
+    z-index: 999;
+}
+
 
 /* endregion general */
 
@@ -38,3 +48,60 @@ body {
 
 /* endregion utilities */
 
+/* region header */
+.app_header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 120px;
+    margin-bottom: 10rem;
+}
+/* #endregion header */
+
+/* region main */
+.app_main {
+    position: fixed;
+    width: 100%;
+    top: 120px;
+    height: calc(100vh - 180px)
+}
+
+
+.myModal {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%);
+}
+/* endregion main */
+
+/* #region character */
+.character {
+    height: 100px;
+    width: 100px;
+  
+}
+
+.character img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* #endregion character */
+
+/* #region footer */
+.app_footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+}
+
+/* #endregion footer */
