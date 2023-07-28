@@ -1,3 +1,8 @@
+/* region general */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 :root {
     --main-color: #013BEB;
     --light-color: white; 
@@ -7,6 +12,10 @@
 }
 
 
+/* endregion general */
+
+
+/* region utilities */
 .bg_main {
     background-color: var(--main-color);
 }
@@ -27,4 +36,5 @@
     background-color: var(--dark-color);
 }
 
+/* endregion utilities */
 
